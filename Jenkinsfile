@@ -4,7 +4,7 @@ node {
    
    
         stage("Compilation ") {
-                sh "./mvnw clean install -DskipTests"
+                sh "./mvnw clean install "
         }
          
          stage("Testing stage ") {
