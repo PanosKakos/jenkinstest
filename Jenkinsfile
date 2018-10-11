@@ -4,7 +4,7 @@ import groovy.json.JsonSlurper;
  
 node{
     stage 'Build, Test and Package'
-    env.PATH = "${tool 'M3'}/bin:${env.PATH}"
+   
     checkout scm
     // workaround, taken from https://github.com/jenkinsci/pipeline-examples/blob/master/pipeline-examples/gitcommit/gitcommit.groovy
     def commitid = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
