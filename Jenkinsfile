@@ -3,7 +3,7 @@ node {
     git 'https://github.com/PanosKakos/jenkinstest.git'
    
    
-        stage("Compilation and Analysis") {
+        stage("Compilation ") {
             'Compilation': {
                 sh "./mvnw clean install -DskipTests"
             }
