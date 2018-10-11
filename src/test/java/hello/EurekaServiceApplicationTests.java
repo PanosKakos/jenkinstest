@@ -16,17 +16,13 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class EurekaServiceApplicationTests {
 
-//     @LocalServerPort
-//     private int port;
 
-//     @Autowired
-//     private TestRestTemplate testRestTemplate;
 
-//     @Test
-//     public void shouldStartEurekaServer() {
-//         ResponseEntity<String> entity = this.testRestTemplate.getForEntity(
-//                 "http://localhost:" + this.port + "/eureka/apps", String.class);
+    @Test
+    public void shouldpass() {
+        String entity = this.testRestTemplate.getForEntity(
+                "http://localhost:" + this.port + "/hello", String.class);
 
-//         then(entity.getStatusCode()).isEqualTo(HttpStatus.OK);
-//     }
+        then(entity.getStatusCode()).isEqualTo(HttpStatus.OK);
+    }
 }
