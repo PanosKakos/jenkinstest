@@ -8,7 +8,7 @@ node {
         }
          
          stage("Testing stage ") {
-                sh "echo $hello"
+                sh "echo finished"
         }
             
 }
