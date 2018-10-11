@@ -7,8 +7,12 @@ node {
                 sh "mvn clean install -Dmaven.test.skip=true "
         }
          
-         stage("Testing stage ") {
+         stage("Show simple message ") {
                 sh "echo finished"
         }
+    
+    stage("Running tests"){
+     sh "mvn test"
+    }
             
 }
