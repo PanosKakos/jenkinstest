@@ -12,7 +12,8 @@ node {
     }
     
     stage("Slack Notification"){
-       sh " if ( buildResult == "SUCCESS" ) {
+        script{
+        if ( buildResult == "SUCCESS" ) {
     slackSend color: "good", message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} was successful"
   }
   else if( buildResult == "FAILURE" ) { 
@@ -23,7 +24,8 @@ node {
   }
   else {
     slackSend color: "danger", message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} its resulat was unclear"	
-  }"
+  }
+        }
     }
             
 }
