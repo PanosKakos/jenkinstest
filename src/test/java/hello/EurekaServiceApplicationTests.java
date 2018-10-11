@@ -17,11 +17,13 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class EurekaServiceApplicationTests {
 
 
+    @Autowired
+    TestRestTemplate testRestTemplate;
 
     @Test
     public void shouldpass() {
         String entity = this.testRestTemplate.getForEntity(
-                "http://localhost:" + this.port + "/hello", String.class);
+                "http://localhost:8761" + "/hello", String.class);
 
         then(entity.getStatusCode()).isEqualTo(HttpStatus.OK);
     }
