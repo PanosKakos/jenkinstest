@@ -4,7 +4,7 @@ node {
    
    
         stage("Compilation ") {
-                sh "mvn clean install "
+                sh "mvn clean install -Dmaven.test.skip=true "
         }
          
          stage("Testing stage ") {
