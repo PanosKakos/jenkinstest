@@ -7,7 +7,7 @@ node {
             'Compilation': {
                 sh "./mvnw clean install -DskipTests"
             }
- 
+        }
          
         stage("Tests and Deployment") {
             parallel 'Unit tests': {
