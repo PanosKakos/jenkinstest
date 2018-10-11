@@ -17,7 +17,7 @@ public class EurekaServiceApplication {
 @RestController
 class ServiceInstanceRestController {
 
-    @RequestMapping("/hello")
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public String hello() {
         return "hello";
     }
