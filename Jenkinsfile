@@ -6,13 +6,17 @@ node {
         stage("Compilation ") {
                 sh "mvn clean install -Dmaven.test.skip=true "
         }
-         
-         stage("Show simple message ") {
-                sh "echo finished"
-        }
-    
-    stage("Running tests"){
+             
+    stage("Running Unit tests"){
      sh "mvn test"
+    }
+    
+    stage("Slack Notification"){
+     slackSend baseUrl: 'https://hooks.slack.com/services/', 
+         channel: '#jenkinschannel', 
+         color: 'good',
+         message: 'Build message to Panos', 
+         tokenCredentialId: 'slack-demo'
     }
             
 }
