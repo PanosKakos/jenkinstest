@@ -35,15 +35,15 @@ node {
                      step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*hello.EurekaServiceApplicationTests.xml'])
   }
     
-  stage("Runing integration tests") {
-           try {
-                sh "mvn test "
-           } catch(err) {
-                step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-'+ '*IntegrationTest.xml'])
-                throw err
-           }
-                step([$class: 'JUnitResultArchiver', testResults:  '**/target/surefire-reports/TEST-'+ '*IntegrationTest.xml'])
-}
+//  stage("Runing integration tests") {
+  //         try {
+    //            sh "mvn test "
+      //     } catch(err) {
+        //        step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-'+ '*IntegrationTest.xml'])
+          //      throw err
+           //}
+            //    step([$class: 'JUnitResultArchiver', testResults:  '**/target/surefire-reports/TEST-'+ '*IntegrationTest.xml'])
+//}
 
 stage("Deploy and run Application") {
                 sh "pid=\$(lsof -i:8989 -t); kill -TERM \$pid "
