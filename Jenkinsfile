@@ -8,7 +8,7 @@ node {
     }
     
     stage ("Clone the project"){
-        git REPO
+        git 'https://github.com/PanosKakos/jenkinstest.git'
     }
     stage("Compilation ") {
          sh "mvn clean install -Dmaven.test.skip=true "
