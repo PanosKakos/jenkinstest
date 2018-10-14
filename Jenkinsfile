@@ -29,10 +29,10 @@ node {
              try {
                      sh "mvn test "  
              } catch(err) {
-                     step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*UnitTest.xml'])
+                     step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*hello.EurekaServiceApplicationTests.xml'])
                      throw err
              }
-                     step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*UnitTest.xml'])
+                     step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*hello.EurekaServiceApplicationTests.xml'])
   }
     
   stage("Runing integration tests") {
