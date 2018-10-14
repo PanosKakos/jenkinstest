@@ -1,7 +1,7 @@
 node {
     
    environment {
-      REPO              = 'https://github.com/PanosKakos/jenkinstest.git'
+      REPO              = "https://github.com/PanosKakos/jenkinstest.git"
       APP_NAME          = 'test-spring-boot-app'
       JOB_NAME          = "$JOB_NAME"
       BUILD_NUMBER      = "$BUILD_NUMBER"
