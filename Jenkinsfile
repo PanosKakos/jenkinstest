@@ -27,7 +27,7 @@ node {
              
     stage("Running Unit tests"){
              try {
-                     sh "mvn test -Punit"  
+                     sh "mvn test "  
              } catch(err) {
                      step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*UnitTest.xml'])
                      throw err
@@ -37,7 +37,7 @@ node {
     
   stage("Runing integration tests") {
            try {
-                sh "mvn test -Pintegration"
+                sh "mvn test "
            } catch(err) {
                 step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-'+ '*IntegrationTest.xml'])
                 throw err
