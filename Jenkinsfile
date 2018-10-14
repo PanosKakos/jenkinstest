@@ -14,7 +14,7 @@ node {
          sh "mvn clean install -Dmaven.test.skip=true "
     }
     stage("Checkstyle") {
-           sh "./mvnw checkstyle:checkstyle"
+           sh "mvnw checkstyle:checkstyle"
                     step([$class: 'CheckStylePublisher',
                       canRunOnFailed: true,
                       defaultEncoding: '',
