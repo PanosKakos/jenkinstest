@@ -14,7 +14,7 @@ node {
          sh "mvn clean install -Dmaven.test.skip=true "
     }
     stage("Checkstyle") {
-           sh "mvnw checkstyle:checkstyle"
+           sh "mvn checkstyle:checkstyle"
                     step([$class: 'CheckStylePublisher',
                       canRunOnFailed: true,
                       defaultEncoding: '',
@@ -27,7 +27,7 @@ node {
              
     stage("Running Unit tests"){
              try {
-                     sh "./mvnw test -Punit"  
+                     sh "mvn test -Punit"  
              } catch(err) {
                      step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*UnitTest.xml'])
                      throw err
@@ -37,7 +37,7 @@ node {
     
   stage("Runing integration tests") {
            try {
-                sh "./mvnw test -Pintegration"
+                sh "mvn test -Pintegration"
            } catch(err) {
                 step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-'+ '*IntegrationTest.xml'])
                 throw err
