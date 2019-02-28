@@ -64,6 +64,3 @@ stage("Deploy and run Application") {
 }
 
 
-test
-
-
